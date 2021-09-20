@@ -6,33 +6,35 @@ import org.springframework.stereotype.Component;
 
 import com.function.app.functionmicroservice.common.LambdaRequest;
 import com.function.app.functionmicroservice.common.LambdaResponse;
-import com.function.app.functionmicroservice.service.ColeccionService;
+import com.function.app.functionmicroservice.service.AyudanteService;
 
 import lombok.AllArgsConstructor;
 
 
-@Component(value = "coleccion")
+@Component(value = "ayudante")
 @AllArgsConstructor
-public class ColeccionFunction implements Function<LambdaRequest, LambdaResponse> {
+public class AyudanteFunction implements Function<LambdaRequest, LambdaResponse> {
 	
-	   private ColeccionService coleccionService;
+	   private AyudanteService ayudanteService;
 
 	    @Override
 	    public LambdaResponse apply(LambdaRequest request) {
 
 	    	if(request.getMetodo().equals("POST")) {
-	    		return coleccionService.CrearColeccion(request);
+	    		return ayudanteService.crearAyudante(request);
 	    	}else {
 	    		if(request.getMetodo().equals("GET")) {
-	    			return coleccionService.ObtenerColeccion(request);
-	    		}else {
-	    			if (request.getMetodo().equals("PUT")) {
-	    				return coleccionService.ActualizarColeccion(request);
+	    			return ayudanteService.ObtenerAyudantesXnegocio(request);
+	    			
+	    	}else {
+	    			if (request.getMetodo().equals("PUT") ) {
+	    				return ayudanteService.ActualizarAyudantes(request);
 	    			}else {
-	    				return coleccionService.EliminarColeccion(request);
+	    				return ayudanteService.EliminarAyudantesXnegocio(request);
 	    			}
 	    		}
 	    	}
-		    		
 	    }
+		    		
+	    
 }

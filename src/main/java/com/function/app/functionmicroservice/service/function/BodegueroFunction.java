@@ -6,30 +6,30 @@ import org.springframework.stereotype.Component;
 
 import com.function.app.functionmicroservice.common.LambdaRequest;
 import com.function.app.functionmicroservice.common.LambdaResponse;
-import com.function.app.functionmicroservice.service.ColeccionService;
+import com.function.app.functionmicroservice.service.BodegueroService;
 
 import lombok.AllArgsConstructor;
 
 
-@Component(value = "coleccion")
+@Component(value = "bodeguero")
 @AllArgsConstructor
-public class ColeccionFunction implements Function<LambdaRequest, LambdaResponse> {
+public class BodegueroFunction implements Function<LambdaRequest, LambdaResponse> {
 	
-	   private ColeccionService coleccionService;
+	   private BodegueroService BodegueroFunction;
 
 	    @Override
 	    public LambdaResponse apply(LambdaRequest request) {
 
 	    	if(request.getMetodo().equals("POST")) {
-	    		return coleccionService.CrearColeccion(request);
+	    		return BodegueroFunction.CrearBodeguero(request);
 	    	}else {
 	    		if(request.getMetodo().equals("GET")) {
-	    			return coleccionService.ObtenerColeccion(request);
+	    			return BodegueroFunction.ObtenerBodeguero(request);
 	    		}else {
 	    			if (request.getMetodo().equals("PUT")) {
-	    				return coleccionService.ActualizarColeccion(request);
+	    				return BodegueroFunction.ActualizarrBodeguero(request);
 	    			}else {
-	    				return coleccionService.EliminarColeccion(request);
+	    				return BodegueroFunction.EliminarBodeguero(request);
 	    			}
 	    		}
 	    	}

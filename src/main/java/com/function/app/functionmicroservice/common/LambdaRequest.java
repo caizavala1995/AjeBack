@@ -18,7 +18,7 @@ public class LambdaRequest {
 	
 	private String entidad;
 	
-	private Map<String, Map<String,String>> data;
+	private Map<String, Object> data;
 
 	
 
