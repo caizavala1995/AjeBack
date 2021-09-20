@@ -79,8 +79,8 @@ public class BodegueroServiceImpl implements BodegueroService{
 				+ " NroDocUsu="+((Map)lambdaRequest.getData().get("bodeguero")).get("nrodocbodeguero")+", \r\n"
 				+ " CorUsu='"+((Map)lambdaRequest.getData().get("bodeguero")).get("correobodeguero")+"', \r\n"
 				+ " PasUsu='"+((Map)lambdaRequest.getData().get("bodeguero")).get("pasbodeguero")+"', \r\n"
-				+ " TelUsu="+((Map)lambdaRequest.getData().get("bodeguero")).get("tele1bodeguero")+", \r\n"
-				+ " Tel2Usu="+((Map)lambdaRequest.getData().get("bodeguero")).get("tele2bodeguero")+", \r\n"
+				+ " TelUsu='"+((Map)lambdaRequest.getData().get("bodeguero")).get("tele1bodeguero")+"', \r\n"
+				+ " Tel2Usu='"+((Map)lambdaRequest.getData().get("bodeguero")).get("tele2bodeguero")+"', \r\n"
 				+ " FecModUsu=current_date, \r\n"
 				+ " UsuModUsu='"+((Map)lambdaRequest.getData().get("bodeguero")).get("usumodbodeguero")+ "' \r\n"
 				+ " where  IdUsu ="+((Map)lambdaRequest.getData().get("bodeguero")).get("idbodeguero");
